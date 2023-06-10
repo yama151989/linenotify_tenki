@@ -19,7 +19,7 @@ t.tenki_for().then(function(res) {
     // 天気種類：Clouds、Rain、Clear
 
     // ########## テスト ##########
-    const env = `${process.env.line_test_NOTIFY_TOKEN}`;
+    const env = `${process.env.LINE_TEST_NOTIFY_TOKEN}`;
     
     // ########## 本番 ##########
     // const env = `${process.env.LINE_NOTIFY_TOKEN}`;
