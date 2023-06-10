@@ -1,6 +1,10 @@
 const axios = require('axios');
 const qs = require('querystring');
 const dotenv = require("dotenv").config();
+// import axios from 'axios';
+// import qs from 'querystring';
+// import * as dotenv from "dotenv";
+// dotenv.config();
 
 const ido = `${process.env.jitaku_ido}`;
 const keido = `${process.env.jitaku_keido}`;
@@ -35,3 +39,4 @@ class tenki {
 }
 
 module.exports = tenki;
+// export default tenki;

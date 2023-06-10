@@ -1,4 +1,5 @@
 const tenki = require('./tenki');
+// import * as tenki from './tenki.mjs';
 const t = new tenki();
 
 // 天気予報
