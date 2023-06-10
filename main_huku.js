@@ -1,18 +1,19 @@
-const tenki_for = require('./tenki_for');
-const line = require('./line');
-const line_test = require('./line_test');
-const mytenki_for = new tenki_for();
-const myline = new line();
-const myline_test = new line_test();
 const axios = require('axios');
+const tenki = require('./tenki');
+const t = new tenki();
+// const line = require('./line');
+// const myline = new line();
+// const myline_test = new line_test();
+// const line = require('./line_test');
+
 
 // 天気予報
-mytenki_for.syutoku().then(function(res) {
+t.tenki_for().then(function(res) {
     // 全てまるっと取得
     // const names = res.data.list;
     // names.forEach(element => console.log(element));
-
-
+    
+    
     const mon_temp = res.data.list[2].main.feels_like;
     const mon_weather = res.data.list[2].weather[0].description;
     const mon_kaze = res.data.list[2].wind.speed;
@@ -21,7 +22,7 @@ mytenki_for.syutoku().then(function(res) {
     const eve_weather = res.data.list[6].weather[0].description;
     const eve_kaze = res.data.list[6].wind.speed;
     const eve_time = res.data.list[6].dt_txt;
-
+    
     // console.log(mon_temp);
     // console.log(mon_weather); 
     // console.log(mon_kaze);
@@ -30,12 +31,12 @@ mytenki_for.syutoku().then(function(res) {
     // console.log(eve_weather);
     // console.log(eve_kaze);
     // console.log(eve_time);
-
-
+    
+    
     // 服装指数基準取得
     const result_huku_mon = huku(mon_temp,mon_weather,mon_kaze);
     const result_huku_eve = huku(eve_temp,eve_weather,eve_kaze);
-
+    
     
     function huku(t,w,k) {
         // 気温考慮
@@ -64,7 +65,7 @@ mytenki_for.syutoku().then(function(res) {
         }
         // console.log(huku_flag);
         // console.log(t);
-
+        
         // 天気考慮
         if (w==="Clear") {
             huku_flag += 1;
@@ -72,8 +73,8 @@ mytenki_for.syutoku().then(function(res) {
         if (w==="Rain") {
             huku_flag -= 1;
         }
-    
-    
+        
+        
         // 風考慮
         if (k > 5) {
             huku_flag -= 1;
@@ -83,7 +84,7 @@ mytenki_for.syutoku().then(function(res) {
         // console.log(`今の気温は${now_temp}`);
         // console.log(`今の天気は${now_weather}`);
         // console.log(huku_flag);
-    
+        
         // コメント
         if (huku_flag===1 || huku_flag===0 || huku_flag===-1 || huku_flag===-2){
             var huku_text = `服装指数は レベル${huku_flag}！！\nぶるぶる、何を着ても寒い！！`;
@@ -110,16 +111,17 @@ mytenki_for.syutoku().then(function(res) {
     }
     // console.log(result_huku_mon);
     // console.log(result_huku_eve);
-
-    // ########## テスト　##########
-    result_huku_text = `\n${mon_time}\n朝の${result_huku_mon}\n-----\n${eve_time}\n帰りの${result_huku_eve}`;
-    myline_test.syutoku(result_huku_text).then(function(res) {console.log(res.data)});
-    // console.log(result_huku_text);
-
-    // // ########## 本番　##########
-    // result_huku_text = `\n${mon_time}\n朝の${result_huku_mon}\n-----\n${eve_time}\n帰りの${result_huku_eve}`;
-    // myline.syutoku(result_huku_text).then(function(res) {console.log(res.data)});
     
+    // ########## テスト　##########
+    const result_huku_text = `\n${mon_time}\n朝の${result_huku_mon}\n-----\n${eve_time}\n帰りの${result_huku_eve}`;
+    const env = `${process.env.line_test_NOTIFY_TOKEN}`;
+    t.linePost(result_huku_text,env).then(function(res) {console.log(res.data)});
+    // console.log(result_huku_text);
+    
+    // // ########## 本番　##########
+    // const result_huku_text = `\n${mon_time}\n朝の${result_huku_mon}\n-----\n${eve_time}\n帰りの${result_huku_eve}`;
+    // const env = `${process.env.LINE_NOTIFY_TOKEN}`;
+    // t.linePost(result_huku_text,env).then(function(res) {console.log(res.data)});
 });
 
 
