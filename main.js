@@ -20,10 +20,10 @@ t.tenki_for().then(function(res) {
     // 天気種類：Clouds、Rain、Clear
 
     // ########## テスト ##########
-    const env = `${process.env.LINE_TEST_NOTIFY_TOKEN}`;
+    // const env = `${process.env.LINE_TEST_NOTIFY_TOKEN}`;
     
     // ########## 本番 ##########
-    // const env = `${process.env.LINE_NOTIFY_TOKEN}`;
+    const env = `${process.env.LINE_NOTIFY_TOKEN}`;
 
     switch (mon_weather_icon_flag) {
         case "Rain":
