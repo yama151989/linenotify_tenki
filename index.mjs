@@ -124,6 +124,8 @@ export const handler = async(event) => {
             data: qs.stringify({
                 message: result_text,
             })
+        }).then(function(res){
+                console.log(res.data);
         });
     });
     return obj1;
