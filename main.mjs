@@ -223,7 +223,7 @@ const a = tenki_for().then(function (res) {
                 const sikaku5 = String.fromCodePoint(129001,129001,129001,129001,129001,9744,9744,9744,9744,9744);
                 var huku_text = `服装指数は レベル${huku_flag}！\n薄手のジャケットを羽織ろう\n${sikaku5}`;
             } else if (huku_flag === 6) {
-                const sikaku6 = String.fromCodePoint(129001,129001,129001,129001,129001,9744,9744,9744,9744,9744);
+                const sikaku6 = String.fromCodePoint(129001,129001,129001,129001,129001,129001,9744,9744,9744,9744);
                 var huku_text = `服装指数は レベル${huku_flag}！\n長袖シャツ・カットソーで快適に\n${sikaku6}`;
             } else if (huku_flag === 7) {
                 const sikaku7 = String.fromCodePoint(129000,129000,129000,129000,129000,129000,129000,9744,9744,9744);
