@@ -1,20 +1,22 @@
-const axios = require('axios');
-const qs = require('querystring');
-const dotenv = require("dotenv").config();
+// tenki.jsにマージ
+//
+// const axios = require('axios');
+// const qs = require('querystring');
+// const dotenv = require("dotenv").config();
 
-const line = function () {};
+// const line = function () {};
 
-line.prototype.syutoku = function(text) {
-    return axios({
-        method: 'post',
-        url: 'https://notify-api.line.me/api/notify',
-        headers: {
-            Authorization: `Bearer ${process.env.LINE_NOTIFY_TOKEN}`,
-        },
-        data: qs.stringify({
-            message: text,
-        })
-    })
-}
+// line.prototype.syutoku = function(text) {
+//     return axios({
+//         method: 'post',
+//         url: 'https://notify-api.line.me/api/notify',
+//         headers: {
+//             Authorization: `Bearer ${process.env.LINE_NOTIFY_TOKEN}`,
+//         },
+//         data: qs.stringify({
+//             message: text,
+//         })
+//     })
+// }
 
-module.exports = line;
+// module.exports = line;
