@@ -208,25 +208,35 @@ const a = tenki_for().then(function (res) {
 
             // コメント
             if (huku_flag === 1 || huku_flag === 0 || huku_flag === -1 || huku_flag === -2) {
-                var huku_text = `服装指数は レベル${huku_flag}！！\nぶるぶる、何を着ても寒い！！`;
+                const sikaku1 = String.fromCodePoint(129002,9744,9744,9744,9744,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！！\nぶるぶる、何を着ても寒い！！\n${sikaku1}`;
             } else if (huku_flag === 2) {
-                var huku_text = `服装指数は レベル${huku_flag}！\nダウンジャケットでしっかり防寒`
+                const sikaku2 = String.fromCodePoint(129002,129002,9744,9744,9744,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\nダウンジャケットでしっかり防寒\n${sikaku2}`;
             } else if (huku_flag === 3) {
-                var huku_text = `服装指数は レベル${huku_flag}！\nコートを着ないと結構寒いなあ`;
+                const sikaku3 = String.fromCodePoint(128998,128998,128998,9744,9744,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\nコートを着ないと結構寒いなあ\n${sikaku3}`;
             } else if (huku_flag === 4) {
-                var huku_text = `服装指数は レベル${huku_flag}！\n裏地付トレンチコートがおすすめ`;
+                const sikaku4 = String.fromCodePoint(128998,128998,128998,128998,9744,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\n裏地付トレンチコートがおすすめ\n${sikaku4}`;
             } else if (huku_flag === 5) {
-                var huku_text = `服装指数は レベル${huku_flag}！\n薄手のジャケットを羽織ろう`;
+                const sikaku5 = String.fromCodePoint(129001,129001,129001,129001,129001,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\n薄手のジャケットを羽織ろう\n${sikaku5}`;
             } else if (huku_flag === 6) {
-                var huku_text = `服装指数は レベル${huku_flag}！\n長袖シャツ・カットソーで快適に`;
+                const sikaku6 = String.fromCodePoint(129001,129001,129001,129001,129001,9744,9744,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\n長袖シャツ・カットソーで快適に\n${sikaku6}`;
             } else if (huku_flag === 7) {
-                var huku_text = `服装指数は レベル${huku_flag}！\n半袖＋カーディガンで温度調節を`;
+                const sikaku7 = String.fromCodePoint(129000,129000,129000,129000,129000,129000,129000,9744,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\n半袖＋カーディガンで温度調節を\n${sikaku7}`;
             } else if (huku_flag === 8) {
-                var huku_text = `服装指数は レベル${huku_flag}！\n半袖Tシャツ一枚で過ごせる暑さ`;
+                const sikaku8 = String.fromCodePoint(129000,129000,129000,129000,129000,129000,129000,129000,9744,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\n半袖Tシャツ一枚で過ごせる暑さ\n${sikaku8}`;
             } else if (huku_flag === 9) {
-                var huku_text = `服装指数は レベル${huku_flag}！\nノースリーブでもかなり暑い！！`;
+                const sikaku9 = String.fromCodePoint(128997,128997,128997,128997,128997,128997,128997,128997,128997,9744);
+                var huku_text = `服装指数は レベル${huku_flag}！\nノースリーブでもかなり暑い！！\n${sikaku9}`;
             } else if (huku_flag >= 10) {
-                var huku_text = `服装指数は レベルMAX！！\n暑さ対策必須！何を着ても暑い！`;
+                const sikaku10 = String.fromCodePoint(128997,128997,128997,128997,128997,128997,128997,128997,128997,128997);
+                var huku_text = `服装指数は レベルMAX！！\n暑さ対策必須！何を着ても暑い！\n${sikaku10}`;
             }
             return huku_text;
         }
