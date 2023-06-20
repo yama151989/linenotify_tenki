@@ -135,14 +135,14 @@ const a = tenki_for().then(function (res) {
         // names.forEach(element => console.log(element));
 
 
-        const mon_temp = res.data.list[2].main.feels_like;
-        const mon_weather = res.data.list[2].weather[0].description;
-        const mon_kaze = res.data.list[2].wind.speed;
-        const mon_time = res.data.list[2].dt_txt;
-        const eve_temp = res.data.list[6].main.feels_like;
-        const eve_weather = res.data.list[6].weather[0].description;
-        const eve_kaze = res.data.list[6].wind.speed;
-        const eve_time = res.data.list[6].dt_txt;
+        const mon_temp = res.data.list[0].main.feels_like;
+        const mon_weather = res.data.list[0].weather[0].description;
+        const mon_kaze = res.data.list[0].wind.speed;
+        const mon_time = res.data.list[0].dt_txt;
+        const eve_temp = res.data.list[4].main.feels_like;
+        const eve_weather = res.data.list[4].weather[0].description;
+        const eve_kaze = res.data.list[4].wind.speed;
+        const eve_time = res.data.list[4].dt_txt;
 
         // console.log(mon_temp);
         // console.log(mon_weather); 
