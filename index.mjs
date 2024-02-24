@@ -11,16 +11,16 @@ export const handler = async(event) => {
             method: 'GET',
             url: `http://api.openweathermap.org/data/2.5/forecast?lon=${keido}&lat=${ido}&units=metric&lang=ja&appid=${process.env.API_KEY}`,
     }).then(function(res) {
-        const mon_temp = res.data.list[2].main.feels_like;
-        let mon_weather = res.data.list[2].weather[0].description;
-        const mon_kaze = res.data.list[2].wind.speed;
-        const mon_time = res.data.list[2].dt_txt;
-        const mon_weather_icon_flag = res.data.list[2].weather[0].main;
-        const eve_temp = res.data.list[6].main.feels_like;
-        let eve_weather = res.data.list[6].weather[0].description;
-        const eve_kaze = res.data.list[6].wind.speed;
-        const eve_time = res.data.list[6].dt_txt;
-        const eve_weather_icon_flag = res.data.list[6].weather[0].main;
+        const mon_temp = res.data.list[0].main.feels_like;
+        let mon_weather = res.data.list[0].weather[0].description;
+        const mon_kaze = res.data.list[0].wind.speed;
+        const mon_time = res.data.list[0].dt_txt;
+        const mon_weather_icon_flag = res.data.list[0].weather[0].main;
+        const eve_temp = res.data.list[3].main.feels_like;
+        let eve_weather = res.data.list[3].weather[0].description;
+        const eve_kaze = res.data.list[3].wind.speed;
+        const eve_time = res.data.list[3].dt_txt;
+        const eve_weather_icon_flag = res.data.list[3].weather[0].main;
         
         if (mon_weather_icon_flag==='Rain'){
             mon_weather = mon_weather + '☂';
